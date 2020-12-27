@@ -2,17 +2,14 @@ import './App.css';
 import Header from "./components/Header/Header";
 import Navbar from "./components/Navbar/Navbar";
 import Profile from "./components/Profile/Profile";
-import Dialogs from "./components/Dialogs/Dialogs";
 
-import {
-    BrowserRouter as Router,
-    Route,
-    Switch
-} from "react-router-dom";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+import DialogsContainer from "./components/Dialogs/DialogsContainer";
+import UsersContainer from "./components/Users/UsersContainer";
 
-const App = (props) => {
+const App = () => {
     return (
-        <Router>
+        <BrowserRouter>
             <div className="app-wrapper">
                 <Header/>
                 <Navbar/>
@@ -20,16 +17,18 @@ const App = (props) => {
                     <Switch>
 
                         <Route path="/profile">
-                            <Profile state={props.state.profilePage} addPost={props.addPost}/>
+                            <Profile />
                         </Route>
                         <Route path="/dialogs">
-                            <Dialogs state={props.state.dialogsPage}/>
+                            <DialogsContainer />
                         </Route>
-
+                        <Route path="/users">
+                            <UsersContainer />
+                        </Route>
                     </Switch>
                 </div>
             </div>
-        </Router>
+        </BrowserRouter>
 
     );
 }
