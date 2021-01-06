@@ -1,32 +1,85 @@
 import React from "react";
-import Post from "../Profile/MyPosts/Post/Post";
+import styles from "./Users.module.css"
+import defaultAvatar from './../../assets/rudolf_small.png'
+import {NavLink} from "react-router-dom";
+import {usersAPI} from "../../api/api";
 
 const Users = (props) => {
-    console.log(props)
-   // let props.users.map(p => (<Post id={p.id} key={p.id} message={p.message} likesCount={p.likesCount}/>))
-    return <div>{ props.users.map(u => (
-        <div id={u.id} key={u.id}>
-            {u.status}
-            <span>
+    let pagesCount = Math.ceil(props.totalUsersCount / props.pageSize)
+    let pages = []
+    for (let i = 1; i <= pagesCount; i++) {
+        pages.push(i)
+    }
+
+    return (
+        <div>
+            <div>
+                {
+                    pages.map(page => {
+                        return (
+                            <span key={page} onClick={() => {
+                                props.onPagedChanged(page)
+                            }}
+                                  className={props.currentPage === page ? styles.selectedPage : undefined}>
+                                {page}
+                            </span>
+                        )
+                    })
+                }
+            </div>
+            {
+                props.users.map(u => (
+                    <div id={u.id} key={u.id}>
+                        {u.status}
+                        <span>
                 <div>
-                    <img />
+                    <NavLink to={'/profile/' + u.id}>
+                        <img src={u.photos.small !== null ? u.photos.small : defaultAvatar} className={styles.avatar}/>
+                    </NavLink>
                 </div>
                 <div>
-                    <button>Follow</button>
+                    {
+                        u.followed
+                            ? <button disabled={props.followingInProgress.some(id => id === u.id)} onClick={() => {
+                                props.toggleIsFollowing(true, u.id)
+                                usersAPI.unFollow(u.id)
+                                    .then(data => {
+                                            if (data.resultCode === 0){
+                                                props.unFollow(u.id)
+                                            }
+                                            props.toggleIsFollowing(false, u.id)
+                                        }
+                                    )
+                            }}>Unfollow</button>
+                            : <button disabled={props.followingInProgress.some(id => id === u.id)} onClick={() => {
+                                props.toggleIsFollowing(true, u.id)
+                                usersAPI.follow(u.id)
+                                    .then(data => {
+                                            if (data.resultCode === 0){
+                                                props.follow(u.id)
+                                            }
+                                            props.toggleIsFollowing(false, u.id)
+                                        }
+                                    )
+
+                            }}>Follow</button>
+                    }
                 </div>
-            </span>
-            <span>
-                <span>
-                    <div>{u.fullName}</div>
-                    <div>{u.status}</div>
                 </span>
-                <span>
-                    <div>{u.location.country}</div>
-                    <div>{u.location.city}</div>
+                        <span>
+                    <span>
+                        <div>{u.name}</div>
+                        <div>{u.status}</div>
+                    </span>
+                    <span>
+                        {/*<div>{u.location.country}</div>*/}
+                        {/*<div>{u.location.city}</div>*/}
+                    </span>
                 </span>
-            </span>
-        </div>)) }
-    </div>
+                    </div>))
+            }
+        </div>
+    )
 }
 
 export default Users
