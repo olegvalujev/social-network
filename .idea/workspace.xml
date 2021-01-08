@@ -4,9 +4,7 @@
     <list default="true" id="cda169f5-2827-414c-870c-dcedad6f91e9" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/api.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Header/HeaderContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/HeaderContainer.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/AuthReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/AuthReducer.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,7 +82,7 @@
       <workItem from="1607365291665" duration="971000" />
       <workItem from="1607429706018" duration="23891000" />
       <workItem from="1607842377888" duration="16000" />
-      <workItem from="1608142653190" duration="129971000" />
+      <workItem from="1608142653190" duration="131120000" />
     </task>
     <servers />
   </component>
