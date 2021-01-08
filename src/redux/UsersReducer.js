@@ -1,3 +1,5 @@
+import {usersAPI} from "../api/api";
+
 export const FOLLOW = 'FOLLOW'
 export const UNFOLLOW = 'UNFOLLOW'
 export const SET_USERS = 'SET_USERS'
@@ -71,12 +73,47 @@ const usersReducer = (state = initialState, action) => {
 
 }
 
-export const follow = (userId) => ({type: FOLLOW, userId})
-export const unFollow = (userId) => ({type: UNFOLLOW, userId})
+export const followSuccess = (userId) => ({type: FOLLOW, userId})
+export const unFollowSuccess = (userId) => ({type: UNFOLLOW, userId})
 export const setUsers = (users) => ({type: SET_USERS, users})
 export const setCurrentPage = (currentPage) => ({type: SET_CURRENT_PAGE, currentPage})
 export const setUsersTotalCount = (totalUsersCount) => ({type: SET_USERS_TOTAL_COUNT, totalUsersCount})
 export const toggleIsFetching = (isFetching) => ({type: TOGGLE_IS_FETCHING, isFetching})
 export const toggleFollowingInProgress = (isFetching, userId) => ({type: TOGGLE_IS_FOLLOWING_PROGRESS, isFetching, userId})
+
+export const getUsers = (currentPage, pageSize) => (dispatch) => {
+    dispatch(toggleIsFetching(true))
+    usersAPI.getUsers(currentPage, pageSize)
+        .then(data => {
+                dispatch(toggleIsFetching(false))
+                dispatch(setUsers(data.items))
+                dispatch(setUsersTotalCount(data.totalCount))
+            }
+        )
+}
+
+export const unFollow = (userId) => (dispatch) => {
+    dispatch(toggleFollowingInProgress(true, userId))
+    usersAPI.unFollow(userId)
+        .then(data => {
+                if (data.resultCode === 0){
+                    dispatch(unFollowSuccess(userId))
+                }
+                dispatch(toggleFollowingInProgress(false, userId))
+            }
+        )
+}
+
+export const follow = (userId) => (dispatch) => {
+    dispatch(toggleFollowingInProgress(true, userId))
+    usersAPI.follow(userId)
+        .then(data => {
+                if (data.resultCode === 0){
+                    dispatch(followSuccess(userId))
+                }
+                dispatch(toggleFollowingInProgress(false, userId))
+            }
+        )
+}
 
 export default usersReducer
