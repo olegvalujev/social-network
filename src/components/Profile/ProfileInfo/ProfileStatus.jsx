@@ -3,25 +3,37 @@ import React from "react";
 
 class ProfileStatus extends React.Component{
     state = {
-        editMode: false
+        editMode: false,
+        status: this.props.status
     }
 
     activateEditMode = () => {
-        debugger
-        this.setState(
-            {
-                editMode: true
-            }
-        )
+        this.setState({
+            editMode: true
+        })
     }
 
-    deActivateEditMode = () => {
+    deactivateEditMode = () => {
+        this.setState({
+            editMode: false
+        })
+        this.props.updateStatus(this.state.status)
+    }
+
+    onStatusChange = (event) => {
+        this.setState({
+            status: event.currentTarget.value
+        })
+    }
+
+    componentDidUpdate(prevProps, prevState, snapshot) {
         debugger
-        this.setState(
-            {
-                editMode: false
-            }
-        )
+        console.log('component update')
+        if (prevProps.status !== this.props.status) {
+            this.setState({
+                status: this.props.status
+            })
+        }
     }
 
     render() {
@@ -34,25 +46,13 @@ class ProfileStatus extends React.Component{
                 }
                 {this.state.editMode &&
                     <div>
-                        <input autoFocus={true} onBlur={this.deActivateEditMode} value={this.props.status}/>
+                        <input
+                            onChange={this.onStatusChange}
+                            autoFocus={true}
+                            onBlur={this.deactivateEditMode}
+                            value={this.state.status}/>
                     </div>
                 }
-                <div>
-                    <div>Name: {this.props.profile.fullName}</div>
-                    <div>About me: {this.props.profile.aboutMe}</div>
-                </div>
-                <div>
-                    <ul>
-                        <li>Facebook: {this.props.profile.contacts.facebook}</li>
-                        <li>Website: {this.props.profile.contacts.facebook}</li>
-                        <li>VK: {this.props.profile.contacts.facebook}</li>
-                        <li>Twitter: {this.props.profile.contacts.facebook}</li>
-                        <li>Instagram: {this.props.profile.contacts.facebook}</li>
-                        <li>YouTube: {this.props.profile.contacts.facebook}</li>
-                        <li>GitHub: {this.props.profile.contactsfacebook}</li>
-                    </ul>
-                </div>
-                { this.props.profile.lookingForAJob ? <div>{this.props.profile.lookingForAJobDescription}</div> : undefined }
             </>
         )
     }
