@@ -17,7 +17,6 @@ let initialState = {
         {id: 6, message: 'Dominika', likesCount: 0},
         {id: 7, message: 'Maria', likesCount: 0},
     ],
-    newPostText: 'it-kamasutra',
     profile: null,
     status: null,
 }
@@ -32,17 +31,10 @@ const profileReducer  = (state = initialState, action) => {
                     ...state.posts,
                     {
                         id: 5,
-                        message: state.newPostText,
+                        message: action.newPostBody,
                         likesCount: 0
                     }
-                ],
-                newPostText: ''
-            }
-        }
-        case UPDATE_NEW_POST_TEXT: {
-            return {
-                ...state,
-                newPostText: action.newText
+                ]
             }
         }
         case SET_USER_PROFILE: {
@@ -62,8 +54,8 @@ const profileReducer  = (state = initialState, action) => {
     }
 }
 
-export const addPostActionCreator = () => ({ type: ADD_POST})
-export const updateNewTextActionCreator = (text) => ({type: UPDATE_NEW_POST_TEXT, newText: text})
+export const addPostActionCreator = (newPostBody) => ({ type: ADD_POST, newPostBody})
+
 export const setUserProfile = (profile) => ({type: SET_USER_PROFILE, profile})
 export const getUserProfile = (userId) => (dispatch) => {
     usersAPI.getProfile(userId).then(data => {

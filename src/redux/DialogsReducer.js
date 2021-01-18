@@ -1,5 +1,4 @@
-export const ADD_DIALOG_POST = 'ADD-DIALOG-POST'
-export const UPDATE_NEW_MESSAGE_TEXT = 'UPDATE-NEW-MESSAGE-TEXT'
+export const SEND_MESSAGE = 'SEND_MESSAGE'
 
 
 let initialState = {
@@ -19,14 +18,13 @@ let initialState = {
         {id: 4, message: 'Where are you going?'},
         {id: 6, message: 'Lets watch football!'},
         {id: 7, message: 'Do you like my art ?'}
-    ],
-    newMessageText: 'Your message text'
+    ]
 }
 
 const dialogsReducer = (state = initialState, action) => {
 
     switch (action.type) {
-        case ADD_DIALOG_POST: {
+        case SEND_MESSAGE: {
 
             return {
                 ...state,
@@ -34,16 +32,9 @@ const dialogsReducer = (state = initialState, action) => {
                     ...state.messages,
                     {
                         id: 10,
-                        message: state.newMessageText
+                        message: action.newMessageBody
                     }
-                ],
-                newMessageText: ''
-            }
-        }
-        case UPDATE_NEW_MESSAGE_TEXT: {
-            return {
-                ...state,
-                newMessageText: action.newText
+                ]
             }
         }
         default:
@@ -53,8 +44,6 @@ const dialogsReducer = (state = initialState, action) => {
 
 }
 
-export const addDialogPostActionCreator = () => ({ type: ADD_DIALOG_POST})
-export const updateNewMessageTextActionCreator = (text) =>
-    ({type: UPDATE_NEW_MESSAGE_TEXT, newText: text})
+export const sendMessageActionCreator = (newMessageBody) => ({ type: SEND_MESSAGE, newMessageBody})
 
 export default dialogsReducer
