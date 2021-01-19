@@ -4,9 +4,6 @@
     <list default="true" id="cda169f5-2827-414c-870c-dcedad6f91e9" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Dialogs/AddMessageForm/AddMessageForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Dialogs/AddMessageForm/AddMessageForm.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Login/Login.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Login/Login.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/common/FormsControls/FormsControls.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/FormsControls/FormsControls.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/redux/AuthReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/AuthReducer.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -88,7 +85,7 @@
       <workItem from="1607842377888" duration="16000" />
       <workItem from="1608142653190" duration="151400000" />
       <workItem from="1610562200902" duration="15117000" />
-      <workItem from="1610903762370" duration="24220000" />
+      <workItem from="1610903762370" duration="25250000" />
     </task>
     <servers />
   </component>
