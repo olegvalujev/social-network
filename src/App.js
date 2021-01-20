@@ -1,41 +1,54 @@
 import './App.css';
 import Navbar from "./components/Navbar/Navbar";
-
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import React from "react";
+import {Route, Switch, withRouter} from "react-router-dom";
 import DialogsContainer from "./components/Dialogs/DialogsContainer";
 import UsersContainer from "./components/Users/UsersContainer";
 import ProfileContainer from "./components/Profile/ProfileContainer";
 import HeaderContainer from "./components/Header/HeaderContainer";
 import Login from "./components/Login/Login";
+import {Component} from "react";
+import {connect} from "react-redux";
+import {compose} from "redux";
+import {initializeApp} from "./redux/app-reducer";
+import Preloader from "./components/common/Preloader/Preloader";
 
-const App = () => {
-    return (
-        <BrowserRouter>
+class App extends Component {
+    componentDidMount() {
+        this.props.initializeApp()
+    }
+
+    render() {
+        if (!this.props.initialized) return <Preloader/>
+        return (
             <div className="app-wrapper">
-                <HeaderContainer />
+                <HeaderContainer/>
                 <Navbar/>
                 <div className="app-wrapper-content">
                     <Switch>
-
                         <Route path="/profile/:userId?">
-                            <ProfileContainer />
+                            <ProfileContainer/>
                         </Route>
                         <Route path="/dialogs">
-                            <DialogsContainer />
+                            <DialogsContainer/>
                         </Route>
                         <Route path="/users">
-                            <UsersContainer />
+                            <UsersContainer/>
                         </Route>
                         <Route path="/login">
-                            <Login />
+                            <Login/>
                         </Route>
                     </Switch>
                 </div>
             </div>
-        </BrowserRouter>
-
-    );
+        )
+    }
 }
 
-
-export default App;
+const mapStateToProps = (state) => ({
+    initialized: state.app.initialized
+})
+export default compose(
+    connect(mapStateToProps, {initializeApp}),
+    withRouter
+)(App)
