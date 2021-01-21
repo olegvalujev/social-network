@@ -23,7 +23,6 @@ const appReducer = (state = initialState, action) => {
 export const initializationSuccess = () => ({type: INITIALIZATION_SUCCESS})
 export const initializeApp = () => (dispatch) =>  {
     dispatch(getAuthUserData()).then(response => {
-        console.log(response)
         dispatch(initializationSuccess())
     })
 
