@@ -1,4 +1,5 @@
 import {usersAPI} from "../api/api";
+import {act} from "@testing-library/react";
 
 export const FOLLOW = 'FOLLOW'
 export const UNFOLLOW = 'UNFOLLOW'
@@ -96,23 +97,26 @@ export const requestUsers = (page, pageSize) => async (dispatch) => {
     dispatch(setUsersTotalCount(response.totalCount))
 }
 
-export const unFollow = (userId) => async (dispatch) => {
+const followUnFollowFlow = async (dispatch, userId, apiMethod, actionCreator) => {
     dispatch(toggleFollowingInProgress(true, userId))
-    let response = await usersAPI.unFollow(userId)
+
+    let response = await apiMethod(userId)
     if (response.resultCode === 0) {
-        dispatch(unFollowSuccess(userId))
+        dispatch(actionCreator(userId))
     }
     dispatch(toggleFollowingInProgress(false, userId))
-
 }
 
-export const follow = (userId) => async (dispatch) => {
-    dispatch(toggleFollowingInProgress(true, userId))
-    let response = await usersAPI.follow(userId)
-    if (response.resultCode === 0) {
-        dispatch(followSuccess(userId))
+export const unFollow = (userId) => {
+    return async (dispatch) => {
+        await followUnFollowFlow(dispatch, userId, usersAPI.unFollow.bind(usersAPI), unFollowSuccess)
     }
-    dispatch(toggleFollowingInProgress(false, userId))
+}
+
+export const follow = (userId) => {
+    return async (dispatch) => {
+        await followUnFollowFlow(dispatch, userId, usersAPI.follow.bind(usersAPI), followSuccess)
+    }
 }
 
 export default usersReducer
