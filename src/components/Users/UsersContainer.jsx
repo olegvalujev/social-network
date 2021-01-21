@@ -9,7 +9,7 @@ import {
     requestUsers,
     unFollowSuccess,
     followSuccess
-} from "../../redux/UsersReducer";
+} from "../../redux/users-reducer";
 import Users from "./Users";
 import Preloader from "../common/Preloader/Preloader";
 import {compose} from "redux";
