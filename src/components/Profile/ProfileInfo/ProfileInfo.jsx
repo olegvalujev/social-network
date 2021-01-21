@@ -1,44 +1,40 @@
 import s from './ProfileInfo.module.css';
 import Preloader from "../../common/Preloader/Preloader";
 import React from "react";
-import ProfileStatus from './ProfileStatusWithHooks'
+import ProfileStatusWithHooks from './ProfileStatusWithHooks'
 
-const ProfileInfo = (props) => {
-    if (!props.profile){
+const ProfileInfo = ({profile, status, updateStatus}) => {
+    if (!profile){
         return <Preloader/>
     }
 
     return (
         <div>
-            {/*<div>*/}
-            {/*    <img src="https://cdn.pixabay.com/photo/2018/01/04/14/11/viburnum-3060769_1280.jpg" alt="viburum"/>*/}
-            {/*</div>*/}
             <div className={s.descriptionBlock}>
                 <div>
-                    <img src={props.profile.photos.large}/>
+                    <img src={profile.photos.large}/>
                 </div>
-                <ProfileStatus
-                    profile={props.profile}
-                    status={props.status}
-                    updateStatus={props.updateStatus}
+                <ProfileStatusWithHooks
+                    status={status}
+                    updateStatus={updateStatus}
                 />
                 <div>
-                    <div>Name: {props.profile.fullName}</div>
-                    <div>About me: {props.profile.aboutMe}</div>
+                    <div>Name: {profile.fullName}</div>
+                    <div>About me: {profile.aboutMe}</div>
                 </div>
                 <div>
                     <ul>
-                        <li>Facebook: {props.profile.contacts.facebook}</li>
-                        <li>Website: {props.profile.contacts.facebook}</li>
-                        <li>VK: {props.profile.contacts.facebook}</li>
-                        <li>Twitter: {props.profile.contacts.facebook}</li>
-                        <li>Instagram: {props.profile.contacts.facebook}</li>
-                        <li>YouTube: {props.profile.contacts.facebook}</li>
-                        <li>GitHub: {props.profile.contactsfacebook}</li>
+                        <li>Facebook: {profile.contacts.facebook}</li>
+                        <li>Website: {profile.contacts.facebook}</li>
+                        <li>VK: {profile.contacts.facebook}</li>
+                        <li>Twitter: {profile.contacts.facebook}</li>
+                        <li>Instagram: {profile.contacts.facebook}</li>
+                        <li>YouTube: {profile.contacts.facebook}</li>
+                        <li>GitHub: {profile.contactsfacebook}</li>
                     </ul>
                 </div>
-                { props.profile.lookingForAJob
-                    ? <div>{props.profile.lookingForAJobDescription}</div> : undefined }
+                { profile.lookingForAJob
+                    ? <div>{profile.lookingForAJobDescription}</div> : undefined }
             </div>
 
         </div>
