@@ -7,7 +7,6 @@ export const SET_USER_PROFILE = 'SET-USER-PROFILE'
 export const SET_STATUS = 'SET_STATUS'
 
 
-
 let initialState = {
     posts: [
         {id: 1, message: 'Domich', likesCount: 0},
@@ -22,7 +21,7 @@ let initialState = {
     status: null,
 }
 
-const profileReducer  = (state = initialState, action) => {
+const profileReducer = (state = initialState, action) => {
 
     switch (action.type) {
         case ADD_POST: {
@@ -61,26 +60,23 @@ const profileReducer  = (state = initialState, action) => {
     }
 }
 
-export const addPostActionCreator = (newPostBody) => ({ type: ADD_POST, newPostBody})
-export const deletePost = (postId) => ({ type: DELETE_POST, postId})
+export const addPostActionCreator = (newPostBody) => ({type: ADD_POST, newPostBody})
+export const deletePost = (postId) => ({type: DELETE_POST, postId})
 
 export const setUserProfile = (profile) => ({type: SET_USER_PROFILE, profile})
-export const getUserProfile = (userId) => (dispatch) => {
-    usersAPI.getProfile(userId).then(data => {
-        dispatch(setUserProfile(data))
-    })
+export const getUserProfile = (userId) => async (dispatch) => {
+    let response = await usersAPI.getProfile(userId)
+    dispatch(setUserProfile(response))
 }
 export const setStatus = (status) => ({type: SET_STATUS, status})
-export const getStatus = (userId) => (dispatch) => {
-    profileAPI.getStatus(userId).then(data => {
-        dispatch(setStatus(data))
-    })
+export const getStatus = (userId) => async (dispatch) => {
+    let response = await profileAPI.getStatus(userId)
+    dispatch(setStatus(response))
 }
-export const updateStatus = (status) => (dispatch) => {
-    profileAPI.updateStatus(status).then(response => {
-        if (!response.data.resultCode) {
-            dispatch(setStatus(status))
-        }
-    })
+export const updateStatus = (status) => async (dispatch) => {
+    let response = await profileAPI.updateStatus(status)
+    if (!response.resultCode) {
+        dispatch(setStatus(status))
+    }
 }
 export default profileReducer
