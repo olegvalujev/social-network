@@ -3,30 +3,16 @@ import styles from "./Users.module.css"
 import defaultAvatar from './../../assets/rudolf_small.png'
 import {NavLink} from "react-router-dom";
 import {usersAPI} from "../../api/api";
+import {Paginator} from "../common/Paginator/Paginator";
 
-const Users = (props) => {
-    let pagesCount = Math.ceil(props.totalUsersCount / props.pageSize)
-    let pages = []
-    for (let i = 1; i <= pagesCount; i++) {
-        pages.push(i)
-    }
+const Users = ({totalUsersCount, pageSize, onPagedChanged, currentPage, ...props}) => {
 
     return (
         <div>
-            <div>
-                {
-                    pages.map(page => {
-                        return (
-                            <span key={page} onClick={() => {
-                                props.onPagedChanged(page)
-                            }}
-                                  className={props.currentPage === page ? styles.selectedPage : undefined}>
-                                {page}
-                            </span>
-                        )
-                    })
-                }
-            </div>
+            <Paginator totalUsersCount={totalUsersCount}
+                       pageSize={pageSize}
+                       onPagedChanged={onPagedChanged}
+                       currentPage={currentPage}/>
             {
                 props.users.map(u => (
                     <div id={u.id} key={u.id}>

@@ -2,11 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cda169f5-2827-414c-870c-dcedad6f91e9" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/components/common/Paginator/Paginator.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/common/Paginator/Paginator.module.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Login/Login.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Login/Login.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Users/Users.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Users/Users.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/common/FormsControls/FormsControls.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/FormsControls/FormsControls.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,7 +50,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="true" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="JavaScript" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components/Profile/ProfileInfo" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components/common/Paginator" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs.jest.jest_package" value="$PROJECT_DIR$/node_modules/react-scripts" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -59,18 +60,18 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Develop\projects\react\app-01\src\components\common\Paginator" />
       <recent name="C:\Develop\projects\react\app-01\src\redux" />
       <recent name="C:\Develop\projects\react\app-01\src\components\Dialogs" />
       <recent name="C:\Develop\projects\react\app-01\src\components\Profile" />
       <recent name="C:\Develop\projects\react\app-01\src\components\Navbar" />
-      <recent name="C:\Develop\projects\react\app-01\src\components\Header" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Develop\projects\react\app-01\src\components\common\Paginator" />
       <recent name="C:\Develop\projects\react\app-01\src\components\Profile\ProfileInfo" />
       <recent name="C:\Develop\projects\react\app-01\src\redux" />
       <recent name="C:\Develop\projects\react\app-01\src\components\Login" />
       <recent name="C:\Develop\projects\react\app-01\src\components\Header" />
-      <recent name="C:\Develop\projects\react\app-01\src\components\Profile" />
     </key>
   </component>
   <component name="RunManager" selected="Jest.After deleting length of array must not decrement if Post ID is incorrect">
@@ -123,7 +124,7 @@
       <workItem from="1607842377888" duration="16000" />
       <workItem from="1608142653190" duration="151400000" />
       <workItem from="1610562200902" duration="15117000" />
-      <workItem from="1610903762370" duration="63617000" />
+      <workItem from="1610903762370" duration="64760000" />
     </task>
     <servers />
   </component>
