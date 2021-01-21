@@ -2,12 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cda169f5-2827-414c-870c-dcedad6f91e9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/common/Paginator/Paginator.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/common/Paginator/Paginator.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Users/User.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Users/Users.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Users/Users.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/common/FormsControls/FormsControls.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/FormsControls/FormsControls.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Users/UsersContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Users/UsersContainer.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,7 +49,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="true" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="JavaScript" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components/common/Paginator" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components/Users" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs.jest.jest_package" value="$PROJECT_DIR$/node_modules/react-scripts" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -67,11 +66,11 @@
       <recent name="C:\Develop\projects\react\app-01\src\components\Navbar" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Develop\projects\react\app-01\src\components\Users" />
       <recent name="C:\Develop\projects\react\app-01\src\components\common\Paginator" />
       <recent name="C:\Develop\projects\react\app-01\src\components\Profile\ProfileInfo" />
       <recent name="C:\Develop\projects\react\app-01\src\redux" />
       <recent name="C:\Develop\projects\react\app-01\src\components\Login" />
-      <recent name="C:\Develop\projects\react\app-01\src\components\Header" />
     </key>
   </component>
   <component name="RunManager" selected="Jest.After deleting length of array must not decrement if Post ID is incorrect">
@@ -124,7 +123,7 @@
       <workItem from="1607842377888" duration="16000" />
       <workItem from="1608142653190" duration="151400000" />
       <workItem from="1610562200902" duration="15117000" />
-      <workItem from="1610903762370" duration="64760000" />
+      <workItem from="1610903762370" duration="66011000" />
     </task>
     <servers />
   </component>
@@ -240,10 +239,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="462" y="144" width="740" height="536" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1611153927403" />
-    <state x="510" y="43" key="refactoring.ChangeSignatureDialog" timestamp="1611136805379">
+    <state x="510" y="43" key="refactoring.ChangeSignatureDialog" timestamp="1611257965098">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="510" y="43" key="refactoring.ChangeSignatureDialog/0.0.1536.824@0.0.1536.824" timestamp="1611136805379" />
+    <state x="510" y="43" key="refactoring.ChangeSignatureDialog/0.0.1536.824@0.0.1536.824" timestamp="1611257965098" />
     <state x="425" y="187" key="run.anything.popup" timestamp="1607193851219">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
