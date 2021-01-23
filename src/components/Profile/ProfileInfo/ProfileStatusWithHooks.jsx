@@ -1,10 +1,10 @@
 import s from "./ProfileStatus.module.css";
 import React, {useEffect, useState} from "react";
 
-const ProfileStatusWithHooks = ({status, updateStatus}) => {
+const ProfileStatusWithHooks = ({status: initialStatus, updateStatus}) => {
 
     let [editMode, setEditMode] = useState(false)
-    let [status, setStatus] = useState(status)
+    let [status, setStatus] = useState(initialStatus)
 
     useEffect(() => {
         setStatus(status)

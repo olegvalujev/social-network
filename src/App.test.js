@@ -1,10 +1,10 @@
-import React from "react";
+import React from 'react'
 import ReactDom from 'react-dom'
-import { render, screen } from '@testing-library/react';
-import App from './App';
+import App from "./App.js"
 
 test('renders without crashing', () => {
-  const div = React.createElement('div')
-  ReactDom.render(<App/>,div)
-  ReactDom.unmountComponentAtNode(div)
-});
+  let container = document.createElement('div');
+  document.body.appendChild(container);
+  ReactDom.render(<App/>, container)
+  ReactDom.unmountComponentAtNode(container)
+})
