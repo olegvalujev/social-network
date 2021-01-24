@@ -1,3 +1,10 @@
 .selectedPage {
     font-weight: bold;
+    background-color: lightgray;
+}
+
+.numberBox {
+    padding: 0 5px;
+    border: solid 1px gray;
+    font-size: 13px;
 }

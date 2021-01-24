@@ -32,7 +32,7 @@ class UsersContainer extends React.Component {
         this.props.requestUsers(currentPage, pageSize)
     }
 
-    onPagedChanged = (pageNumber) => {
+    onPageChanged = (pageNumber) => {
         const {pageSize} = this.props
         this.props.setCurrentPage(pageNumber)
         this.props.requestUsers(pageNumber, pageSize)
@@ -44,7 +44,7 @@ class UsersContainer extends React.Component {
             <Users totalUsersCount={this.props.totalUsersCount}
                    pageSize={this.props.pageSize}
                    currentPage={this.props.currentPage}
-                   onPagedChanged={this.onPagedChanged}
+                   onPageChanged={this.onPageChanged}
                    users={this.props.users}
                    unFollow={this.props.unFollow}
                    follow={this.props.follow}
