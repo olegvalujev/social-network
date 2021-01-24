@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cda169f5-2827-414c-870c-dcedad6f91e9" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/common/Paginator/Paginator.test.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Users/Users.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Users/Users.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Users/UsersContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Users/UsersContainer.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/common/Paginator/Paginator.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/Paginator/Paginator.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/common/Paginator/Paginator.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/Paginator/Paginator.module.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,32 +84,32 @@
       <recent name="C:\Develop\projects\react\app-01\src\components\Login" />
     </key>
   </component>
-  <component name="RunManager" selected="Jest.ProfileStatus component.Callback function should be called">
-    <configuration name="ProfileStatus component.After creation input element should not be displayed" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Jest.Paginator Component tests.If pages count is more than 10 button Next must be displayed">
+    <configuration name="Paginator Component tests.If pages count is more than 10 button Next must be displayed" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <node-options value="" />
       <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
       <working-dir value="$PROJECT_DIR$" />
       <envs />
       <scope-kind value="TEST" />
-      <test-file value="$PROJECT_DIR$/src/components/Profile/ProfileInfo/ProfileStatus.test.js" />
+      <test-file value="$PROJECT_DIR$/src/components/common/Paginator/Paginator.test.js" />
       <test-names>
-        <test-name value="ProfileStatus component" />
-        <test-name value="After creation input element should not be displayed" />
+        <test-name value="Paginator Component tests" />
+        <test-name value="If pages count is more than 10 button Next must be displayed" />
       </test-names>
       <method v="2" />
     </configuration>
-    <configuration name="ProfileStatus component.After creation span element should be displayed" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+    <configuration name="Paginator Component tests.If pages count is more than portion size - displayed pages must be equal to portion size" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <node-options value="" />
       <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
       <working-dir value="$PROJECT_DIR$" />
       <envs />
       <scope-kind value="TEST" />
-      <test-file value="$PROJECT_DIR$/src/components/Profile/ProfileInfo/ProfileStatus.test.js" />
+      <test-file value="$PROJECT_DIR$/src/components/common/Paginator/Paginator.test.js" />
       <test-names>
-        <test-name value="ProfileStatus component" />
-        <test-name value="After creation span element should be displayed" />
+        <test-name value="Paginator Component tests" />
+        <test-name value="If pages count is more than portion size - displayed pages must be equal to portion size" />
       </test-names>
       <method v="2" />
     </configuration>
@@ -161,11 +157,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Jest.Paginator Component tests.If pages count is more than 10 button Next must be displayed" />
+        <item itemvalue="Jest.Paginator Component tests.If pages count is more than portion size - displayed pages must be equal to portion size" />
         <item itemvalue="Jest.ProfileStatus component.Callback function should be called" />
         <item itemvalue="Jest.ProfileStatus component.If edit mode is on input should be visible" />
         <item itemvalue="Jest.ProfileStatus component.After creation span element should be with a correct status" />
-        <item itemvalue="Jest.ProfileStatus component.After creation input element should not be displayed" />
-        <item itemvalue="Jest.ProfileStatus component.After creation span element should be displayed" />
       </list>
     </recent_temporary>
   </component>
@@ -185,7 +181,7 @@
       <workItem from="1607842377888" duration="16000" />
       <workItem from="1608142653190" duration="151400000" />
       <workItem from="1610562200902" duration="15117000" />
-      <workItem from="1610903762370" duration="100974000" />
+      <workItem from="1610903762370" duration="101941000" />
     </task>
     <servers />
   </component>
@@ -217,70 +213,70 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="0" y="267" key="FileDocumentManager.FileCacheConflict/0.0.1536.824@0.0.1536.824" timestamp="1611238598017" />
-    <state width="1493" height="210" key="GridCell.Tab.0.bottom" timestamp="1611431602831">
+    <state width="1493" height="410" key="GridCell.Tab.0.bottom" timestamp="1611514147092">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1611431602831" />
-    <state width="1493" height="210" key="GridCell.Tab.0.center" timestamp="1611431602831">
+    <state width="1493" height="410" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1611514147092" />
+    <state width="1493" height="410" key="GridCell.Tab.0.center" timestamp="1611514147092">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1611431602831" />
-    <state width="1493" height="210" key="GridCell.Tab.0.left" timestamp="1611431602831">
+    <state width="1493" height="410" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1611514147092" />
+    <state width="1493" height="410" key="GridCell.Tab.0.left" timestamp="1611514147091">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1611431602831" />
-    <state width="1493" height="210" key="GridCell.Tab.0.right" timestamp="1611431602831">
+    <state width="1493" height="410" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1611514147091" />
+    <state width="1493" height="410" key="GridCell.Tab.0.right" timestamp="1611514147092">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1611431602831" />
-    <state width="1493" height="410" key="GridCell.Tab.1.bottom" timestamp="1611425401534">
+    <state width="1493" height="410" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1611514147092" />
+    <state width="1493" height="410" key="GridCell.Tab.1.bottom" timestamp="1611514146875">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="410" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1611425401534" />
-    <state width="1493" height="410" key="GridCell.Tab.1.center" timestamp="1611425401534">
+    <state width="1493" height="410" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1611514146875" />
+    <state width="1493" height="410" key="GridCell.Tab.1.center" timestamp="1611514146874">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="410" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1611425401534" />
-    <state width="1493" height="410" key="GridCell.Tab.1.left" timestamp="1611425401534">
+    <state width="1493" height="410" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1611514146874" />
+    <state width="1493" height="410" key="GridCell.Tab.1.left" timestamp="1611514146874">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="410" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1611425401534" />
-    <state width="1493" height="410" key="GridCell.Tab.1.right" timestamp="1611425401534">
+    <state width="1493" height="410" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1611514146874" />
+    <state width="1493" height="410" key="GridCell.Tab.1.right" timestamp="1611514146874">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="410" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1611425401534" />
-    <state width="1493" height="410" key="GridCell.Tab.2.bottom" timestamp="1611425401535">
+    <state width="1493" height="410" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1611514146874" />
+    <state width="1493" height="410" key="GridCell.Tab.2.bottom" timestamp="1611514146875">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="410" key="GridCell.Tab.2.bottom/0.0.1536.824@0.0.1536.824" timestamp="1611425401535" />
-    <state width="1493" height="410" key="GridCell.Tab.2.center" timestamp="1611425401535">
+    <state width="1493" height="410" key="GridCell.Tab.2.bottom/0.0.1536.824@0.0.1536.824" timestamp="1611514146875" />
+    <state width="1493" height="410" key="GridCell.Tab.2.center" timestamp="1611514146875">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="410" key="GridCell.Tab.2.center/0.0.1536.824@0.0.1536.824" timestamp="1611425401535" />
-    <state width="1493" height="410" key="GridCell.Tab.2.left" timestamp="1611425401534">
+    <state width="1493" height="410" key="GridCell.Tab.2.center/0.0.1536.824@0.0.1536.824" timestamp="1611514146875" />
+    <state width="1493" height="410" key="GridCell.Tab.2.left" timestamp="1611514146875">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="410" key="GridCell.Tab.2.left/0.0.1536.824@0.0.1536.824" timestamp="1611425401534" />
-    <state width="1493" height="410" key="GridCell.Tab.2.right" timestamp="1611425401535">
+    <state width="1493" height="410" key="GridCell.Tab.2.left/0.0.1536.824@0.0.1536.824" timestamp="1611514146875" />
+    <state width="1493" height="410" key="GridCell.Tab.2.right" timestamp="1611514146875">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="410" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1611425401535" />
-    <state width="1493" height="410" key="GridCell.Tab.3.bottom" timestamp="1611425401536">
+    <state width="1493" height="410" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1611514146875" />
+    <state width="1493" height="410" key="GridCell.Tab.3.bottom" timestamp="1611514146875">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="410" key="GridCell.Tab.3.bottom/0.0.1536.824@0.0.1536.824" timestamp="1611425401536" />
-    <state width="1493" height="410" key="GridCell.Tab.3.center" timestamp="1611425401536">
+    <state width="1493" height="410" key="GridCell.Tab.3.bottom/0.0.1536.824@0.0.1536.824" timestamp="1611514146875" />
+    <state width="1493" height="410" key="GridCell.Tab.3.center" timestamp="1611514146875">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="410" key="GridCell.Tab.3.center/0.0.1536.824@0.0.1536.824" timestamp="1611425401536" />
-    <state width="1493" height="410" key="GridCell.Tab.3.left" timestamp="1611425401536">
+    <state width="1493" height="410" key="GridCell.Tab.3.center/0.0.1536.824@0.0.1536.824" timestamp="1611514146875" />
+    <state width="1493" height="410" key="GridCell.Tab.3.left" timestamp="1611514146875">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="410" key="GridCell.Tab.3.left/0.0.1536.824@0.0.1536.824" timestamp="1611425401536" />
-    <state width="1493" height="410" key="GridCell.Tab.3.right" timestamp="1611425401536">
+    <state width="1493" height="410" key="GridCell.Tab.3.left/0.0.1536.824@0.0.1536.824" timestamp="1611514146875" />
+    <state width="1493" height="410" key="GridCell.Tab.3.right" timestamp="1611514146875">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="410" key="GridCell.Tab.3.right/0.0.1536.824@0.0.1536.824" timestamp="1611425401536" />
+    <state width="1493" height="410" key="GridCell.Tab.3.right/0.0.1536.824@0.0.1536.824" timestamp="1611514146875" />
     <state x="277" y="55" key="SettingsEditor" timestamp="1607194106708">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
