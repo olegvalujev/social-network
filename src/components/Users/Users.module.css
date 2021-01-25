@@ -18,8 +18,20 @@
 }
 
 .userBlock {
-    display: block;
+    display: flex;
     padding: 10px;
     background-color: #DCEBF1;
     border-radius: 5px;
+    flex-direction: column;
+}
+
+.userBlock .row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.userDetails {
+    color: #647780;
 }
