@@ -20,10 +20,11 @@ const ProfileInfo = ({profile, status, updateStatus}) => {
                     updateStatus={updateStatus}
                 />
                 <div>
-                    <div>Name: {profile.fullName}</div>
-                    <div>About me: {profile.aboutMe}</div>
+                    <div><strong>Name:</strong> {profile.fullName ? profile.fullName : ' - '}</div>
+                    <div><strong>About me:</strong> {profile.aboutMe ? profile.aboutMe : ' - '}</div>
                 </div>
                 <div>
+                    <h4>Social media links:</h4>
                     <ul>
                         {profile.contacts.facebook && <li>Facebook: {profile.contacts.facebook}</li>}
                         {profile.contacts.website && <li>Website: {profile.contacts.website}</li>}

@@ -1,9 +1,23 @@
-.item {
-    color: green;
+.postBlock {
+    display: flex;
+    justify-content: left;
+    margin: 5px;
 }
 
-.item img {
+.postBlock .message {
+    color: #647780;
+    background-color: #FCF6E4;
+    margin: 5px;
+    padding: 5px 20px;
+    border-radius: 5px;
+}
+
+.postBlock img {
     width: 50px;
     height: 50px;
     border-radius: 30px;
+}
+
+.userName {
+    color: #647780;
 }
