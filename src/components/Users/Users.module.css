@@ -9,3 +9,17 @@
 .selectedPage {
     font-weight: bold;
 }
+
+.usersWrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    grid-gap: 10px;
+}
+
+.userBlock {
+    display: block;
+    padding: 10px;
+    background-color: #DCEBF1;
+    border-radius: 5px;
+}

@@ -24,7 +24,7 @@ const Paginator = ({totalUsersCount, pageSize, onPageChanged, currentPage, porti
     }
 
     return (
-        <div>
+        <div className={styles.paginatorWrapper}>
             {showPrev && <button onClick={() => {
                 onPrevPage()
             }}>Prev</button>}

@@ -1,6 +1,7 @@
 import React from "react";
 import Paginator from "../common/Paginator/Paginator";
 import User from "./User";
+import styles from './Users.module.css'
 
 const Users = ({
                    totalUsersCount, pageSize, onPageChanged, currentPage, user,
@@ -13,7 +14,7 @@ const Users = ({
                        onPageChanged={onPageChanged}
                        currentPage={currentPage}
                        portionSize={10}/>
-           <div>
+           <div className={styles.usersWrapper}>
                 {props.users.map(u => (<User key={u.id} user={u}
                                              followingInProgress={followingInProgress}
                                              unFollow={unFollow}

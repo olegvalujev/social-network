@@ -10,6 +10,6 @@
 
 .app-wrapper-content {
     grid-area: c;
-    background-color: #DCEBF1;
+    /*background-color: #DCEBF1;*/
     padding: 10px;
 }

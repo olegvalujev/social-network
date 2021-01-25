@@ -8,3 +8,10 @@
     border: solid 1px gray;
     font-size: 13px;
 }
+
+.paginatorWrapper {
+    border-radius: 5px;
+    padding: 5px;
+    background-color: #DCEBF1;
+    margin-bottom: 20px;
+}
