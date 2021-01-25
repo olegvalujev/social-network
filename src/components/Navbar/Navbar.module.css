@@ -1,15 +1,15 @@
 .nav {
     grid-area: b;
     background-color: #AFD1E0;
-    padding: 20px;
+    padding: 5px;
 }
 
 .item a {
     color: white;
     text-decoration: none;
     padding: 5px;
-    display: inline-block;
-    width: 100%;
+    margin: 0 2px;
+    display: block;
 }
 
 .item a.active {
