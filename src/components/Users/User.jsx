@@ -6,7 +6,7 @@ import {NavLink} from "react-router-dom";
 const User = ({user,followingInProgress,unFollow,follow}) => {
     return (
             <div className={styles.userBlock}>
-                {user.status}
+                {user.status && <div>user.status</div>}
                 <div>
                     <div>
                         <NavLink to={'/profile/' + user.id}>
@@ -26,14 +26,8 @@ const User = ({user,followingInProgress,unFollow,follow}) => {
                     </div>
                 </div>
                 <div>
-                    <div>
-                        <div>{user.name}</div>
-                        <div>{user.status}</div>
-                    </div>
-                    <div>
-                        {/*<div>{user.location.country}</div>*/}
-                        {/*<div>{user.location.city}</div>*/}
-                    </div>
+                    <div>{user.name}</div>
+                    <div>{user.status}</div>
                 </div>
             </div>
     )
