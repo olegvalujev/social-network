@@ -21,6 +21,7 @@ import {
     getPageSize,
     getTotalUsersCount
 } from "../../redux/users-selectors";
+import {getIsAuth} from "../../redux/auth-selectors";
 
 class UsersContainer extends React.Component {
     constructor(props) {
@@ -39,19 +40,20 @@ class UsersContainer extends React.Component {
     }
 
     render() {
-        if (this.props.isFetching) return <Preloader />
+        if (this.props.isFetching) return <Preloader/>
 
         return <Users totalUsersCount={this.props.totalUsersCount}
-                   pageSize={this.props.pageSize}
-                   currentPage={this.props.currentPage}
-                   onPageChanged={this.onPageChanged}
-                   users={this.props.users}
-                   unFollow={this.props.unFollow}
-                   follow={this.props.follow}
-                   toggleIsFetching={this.props.toggleIsFetching}
-                   toggleIsFollowing={this.props.toggleFollowingInProgress}
-                   followingInProgress={this.props.followingInProgress}
-            />
+                      pageSize={this.props.pageSize}
+                      currentPage={this.props.currentPage}
+                      onPageChanged={this.onPageChanged}
+                      users={this.props.users}
+                      unFollow={this.props.unFollow}
+                      follow={this.props.follow}
+                      toggleIsFetching={this.props.toggleIsFetching}
+                      toggleIsFollowing={this.props.toggleFollowingInProgress}
+                      followingInProgress={this.props.followingInProgress}
+                      isAuth={this.props.isAuth}
+        />
     }
 }
 
@@ -62,7 +64,8 @@ let mapStateToProps = (state) => {
         totalUsersCount: getTotalUsersCount(state),
         currentPage: getCurrentPage(state),
         isFetching: getIsFetching(state),
-        followingInProgress: getFollowingInProgress(state)
+        followingInProgress: getFollowingInProgress(state),
+        isAuth: getIsAuth(state)
     }
 };
 

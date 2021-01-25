@@ -9,18 +9,20 @@ const Users = ({
                }) => {
 
     return <div>
-            <Paginator totalUsersCount={totalUsersCount}
-                       pageSize={pageSize}
-                       onPageChanged={onPageChanged}
-                       currentPage={currentPage}
-                       portionSize={10}/>
-           <div className={styles.usersWrapper}>
-                {props.users.map(u => (<User key={u.id} user={u}
-                                             followingInProgress={followingInProgress}
-                                             unFollow={unFollow}
-                                             follow={follow}/>))}
-           </div>
+        <Paginator totalUsersCount={totalUsersCount}
+                   pageSize={pageSize}
+                   onPageChanged={onPageChanged}
+                   currentPage={currentPage}
+                   portionSize={10}/>
+        <div className={styles.usersWrapper}>
+            {props.users.map(u => (<User key={u.id} user={u}
+                                         followingInProgress={followingInProgress}
+                                         unFollow={unFollow}
+                                         follow={follow}
+                                         isAuth={props.isAuth}
+            />))}
         </div>
+    </div>
 }
 
 export default Users
