@@ -5,7 +5,8 @@
 }
 
 .postBlock .avatar {
-    flex-basis: 50px;
+    flex-basis: 64px;
+    flex-shrink: 0;
 }
 
 .postBlock .message {

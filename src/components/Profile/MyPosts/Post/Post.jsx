@@ -3,7 +3,7 @@ import s from './Post.module.css';
 const Post = (props) => {
     return (
         <div className={s.postBlock}>
-            <div>
+            <div className={s.avatar}>
                 <img
                     src="https://media.istockphoto.com/photos/close-up-cute-meerkat-animal-relaxing-in-the-dessert-picture-id585613602"
                     alt="avatar"/>

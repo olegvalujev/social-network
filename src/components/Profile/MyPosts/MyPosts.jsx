@@ -5,7 +5,7 @@ import {Field, reduxForm} from "redux-form";
 import {maxLength, required} from './../../../utils/validators/validators'
 import {Textarea} from "../../common/FormsControls/FormsControls";
 
-const maxLength20 = maxLength(20)
+const maxLength200 = maxLength(200)
 
 const MyPosts = React.memo(props => {
     let postsElements = [...props.posts]
@@ -19,7 +19,7 @@ const MyPosts = React.memo(props => {
     return (
         <div className={s.postsBlock}>
             <h3>My Posts:</h3>
-            <PostFormRedux onSubmit={addNewPost}/>
+            <PostFormRedux className={s.postsForm} onSubmit={addNewPost}/>
             <div className={s.posts}>
                 {postsElements}
             </div>
@@ -32,7 +32,7 @@ const PostForm = (props) => {
     return (
         <form onSubmit={handleSubmit}>
             <div>
-                <Field name={'newPostBody'} component={Textarea} validate={[required, maxLength20]}/>
+                <Field name={'newPostBody'} component={Textarea} validate={[required, maxLength200]}/>
             </div>
             <div>
                 <button>Add Post</button>

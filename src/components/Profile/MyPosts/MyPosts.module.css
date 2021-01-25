@@ -1,6 +1,11 @@
 .posts {
 }
 
+.postsForm {
+}
+
 .postsBlock {
     padding: 10px;
+    display: grid;
+    grid-row-gap: 20px;
 }
