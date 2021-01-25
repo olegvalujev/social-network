@@ -23,20 +23,25 @@ class App extends Component {
     render() {
         if (!this.props.initialized) return <Preloader/>
         return (
-            <Suspense fallback={<div>Loading...</div>}>
             <div className="app-wrapper">
                 <HeaderContainer/>
                 <Navbar/>
                 <div className="app-wrapper-content">
                     <Switch>
                         <Route path="/profile/:userId?">
-                            <ProfileContainer/>
+                            <Suspense fallback={<Preloader/>}>
+                                <ProfileContainer/>
+                            </Suspense>
                         </Route>
                         <Route path="/dialogs">
-                            <DialogsContainer/>
+                            <Suspense fallback={<Preloader/>}>
+                                <DialogsContainer/>
+                            </Suspense>
                         </Route>
                         <Route path="/users">
-                            <UsersContainer/>
+                            <Suspense fallback={<Preloader/>}>
+                                <UsersContainer/>
+                            </Suspense>
                         </Route>
                         <Route path="/login">
                             <Login/>
@@ -44,7 +49,6 @@ class App extends Component {
                     </Switch>
                 </div>
             </div>
-            </Suspense>
         )
     }
 }
