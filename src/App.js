@@ -1,10 +1,7 @@
-import React from "react";
+import React, {Suspense} from "react";
 import './App.css';
 import Navbar from "./components/Navbar/Navbar";
 import {BrowserRouter, Route, Switch, withRouter} from "react-router-dom";
-import DialogsContainer from "./components/Dialogs/DialogsContainer";
-import UsersContainer from "./components/Users/UsersContainer";
-import ProfileContainer from "./components/Profile/ProfileContainer";
 import HeaderContainer from "./components/Header/HeaderContainer";
 import Login from "./components/Login/Login";
 import {Component} from "react";
@@ -14,6 +11,10 @@ import {initializeApp} from "./redux/app-reducer";
 import Preloader from "./components/common/Preloader/Preloader";
 import store from "./redux/redux-store";
 
+const DialogsContainer = React.lazy(() => import('./components/Dialogs/DialogsContainer'))
+const UsersContainer = React.lazy(() => import('./components/Users/UsersContainer'))
+const ProfileContainer = React.lazy(() => import('./components/Profile/ProfileContainer'))
+
 class App extends Component {
     componentDidMount() {
         this.props.initializeApp()
@@ -22,6 +23,7 @@ class App extends Component {
     render() {
         if (!this.props.initialized) return <Preloader/>
         return (
+            <Suspense fallback={<div>Loading...</div>}>
             <div className="app-wrapper">
                 <HeaderContainer/>
                 <Navbar/>
@@ -42,6 +44,7 @@ class App extends Component {
                     </Switch>
                 </div>
             </div>
+            </Suspense>
         )
     }
 }

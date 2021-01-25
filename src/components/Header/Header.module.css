@@ -1,6 +1,8 @@
 .header {
     grid-area: a;
-    background-color: green;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 10px;
 }
 
 .header img {
@@ -8,9 +10,14 @@
 }
 
 .loginBlock {
-    float: right;
+    justify-self: right;
 }
 
 .loginBlock a {
     color: white;
+}
+
+.logoTitle{
+    padding: 5px;
+    color: darkgray;
 }

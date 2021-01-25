@@ -1,9 +1,10 @@
+import React from 'react';
 import s from './Header.module.css';
 import {NavLink} from "react-router-dom";
 const Header = (props) => {
     return (
         <header className={ s.header }>
-            <img src='https://cdn.pixabay.com/photo/2020/11/24/17/54/australian-shepherd-5773397_1280.jpg' alt='header'/>
+            <h2 className={s.logoTitle}>Social Network</h2>
             <div className={s.loginBlock}>
                 { props.isAuth
                     ? <div> {props.login} - <button onClick={props.logout}>Logout</button> </div>
