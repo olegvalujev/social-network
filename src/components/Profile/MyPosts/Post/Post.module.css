@@ -4,6 +4,10 @@
     margin: 5px;
 }
 
+.postBlock .avatar {
+    flex-basis: 50px;
+}
+
 .postBlock .message {
     color: #647780;
     background-color: #FCF6E4;
