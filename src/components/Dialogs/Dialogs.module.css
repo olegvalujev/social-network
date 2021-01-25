@@ -1,8 +1,11 @@
 .dialogs {
     display: grid;
     grid-template-columns: 2fr 10fr;
-
+    background-color: #DCEBF1;
+    padding: 10px;
+    border-radius: 5px;
 }
+
 .dialogsItems {
     padding: 10px;
 }

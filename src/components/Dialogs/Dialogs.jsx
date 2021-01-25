@@ -21,9 +21,9 @@ const Dialogs = (props) => {
                 { props.dialogsPage.dialogs.map(d => (<DialogItem id={d.id} key={d.id} name={d.name}/>)) }
             </div>
             <div className={s.messages}>
-                <div>
+
                     { props.dialogsPage.messages.map(m => (<Message id={m.id} key={m.id} message={m.message}/>)) }
-                </div>
+
                 <AddMessageForm onSubmit={addNewMessage}/>
             </div>
         </div>

@@ -1,4 +1,11 @@
-.messages .message {
 
+.message {
+    margin-bottom: 15px;
+}
+.message .messageBlob{
+    padding: 5px;
+    background-color: #FCF6E4;
+    border-radius: 5px;
+    border: dashed 1px #647780;
 }
 
