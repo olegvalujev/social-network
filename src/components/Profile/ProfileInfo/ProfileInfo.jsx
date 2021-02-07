@@ -1,6 +1,6 @@
 import styles from './ProfileInfo.module.css';
 import Preloader from "../../common/Preloader/Preloader";
-import React, {useEffect, useState} from "react";
+import React, {useState} from "react";
 import ProfileStatusWithHooks from './ProfileStatusWithHooks'
 import defaultAvatar from "../../../assets/snowman_medium.png";
 import ProfileDetailsForm from "./ProfileDetailsForm";
@@ -17,14 +17,17 @@ const ProfileInfo = ({profile, status, updateStatus, isOwner, savePhoto, savePro
         }
     }
 
-    const onSubmit = (formData) => {
-        saveProfile(formData)
+    const onSubmit = async (formData) => {
+        saveProfile(formData).then(()=>{
+            setEditMode(false)
+        }).catch(()=>{})
+
     }
     return (
         <div className={styles.descriptionBlock}>
             <div>
                 <img src={profile.photos.large !== null ? profile.photos.large : defaultAvatar}
-                     className={styles.avatar}/>
+                     className={styles.avatar} alt={'Profile'}/>
             </div>
             {isOwner && <input type={'file'} onChange={mainPhotoSelected}/> }
             <ProfileStatusWithHooks
@@ -32,7 +35,10 @@ const ProfileInfo = ({profile, status, updateStatus, isOwner, savePhoto, savePro
                 updateStatus={updateStatus}
             />
             {editMode
-                ? <ProfileDetailsForm profile={profile} onSubmit={onSubmit}/>
+                ? <ProfileDetailsForm profile={profile}
+                                      initialValues={profile}
+                                      onSubmit={onSubmit}
+                />
                 : <ProfileDetails profile={profile}
                                   isOwner={isOwner}
                                   goToEditMode={() => {setEditMode(true)}}

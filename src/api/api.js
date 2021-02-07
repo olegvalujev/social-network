@@ -17,11 +17,7 @@ export const usersAPI = {
     },
     unFollow(userId) {
         return instance.delete(`follow/${userId}`).then(response => response.data)
-    },
-    getProfile(userId) {
-        console.log('Obsolete, please use profile API')
-        return profileAPI.getProfile(userId)
-    },
+    }
 }
 
 export const profileAPI = {
@@ -48,7 +44,7 @@ export const profileAPI = {
     },
     saveProfile(profile) {
         return instance.put(`profile`, {
-            profile: profile
+            ...profile
         }).then(response => response.data)
     }
 }

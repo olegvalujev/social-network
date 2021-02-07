@@ -11,7 +11,7 @@ const User = ({user, followingInProgress, unFollow, follow, isAuth}) => {
             <div className={styles.row}>
                 <NavLink to={'/profile/' + user.id}>
                     <img src={user.photos.small !== null ? user.photos.small : defaultAvatar}
-                         className={styles.avatar}/>
+                         className={styles.avatar} alt={'User avatar'}/>
                 </NavLink>
             </div>
 

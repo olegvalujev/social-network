@@ -1,4 +1,3 @@
-import s from "./ProfileStatus.module.css";
 import React from "react";
 
 class ProfileStatus extends React.Component{

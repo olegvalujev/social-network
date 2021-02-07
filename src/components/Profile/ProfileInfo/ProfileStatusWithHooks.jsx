@@ -1,4 +1,3 @@
-import s from "./ProfileStatus.module.css";
 import React, {useEffect, useState} from "react";
 import styled, {css} from 'styled-components'
 

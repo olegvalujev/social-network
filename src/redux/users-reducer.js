@@ -1,5 +1,4 @@
 import {usersAPI} from "../api/api";
-import {act} from "@testing-library/react";
 import {updateObjectInArray} from "../utils/helpers/object-helpers";
 
 export const FOLLOW = 'FOLLOW'

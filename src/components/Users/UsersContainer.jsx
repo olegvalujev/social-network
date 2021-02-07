@@ -24,10 +24,6 @@ import {
 import {getIsAuth} from "../../redux/auth-selectors";
 
 class UsersContainer extends React.Component {
-    constructor(props) {
-        super(props)
-    }
-
     componentDidMount() {
         const {currentPage, pageSize} = this.props
         this.props.requestUsers(currentPage, pageSize)
