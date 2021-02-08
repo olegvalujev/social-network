@@ -10,14 +10,23 @@ import {compose} from "redux";
 import {initializeApp} from "./redux/app-reducer";
 import Preloader from "./components/common/Preloader/Preloader";
 import store from "./redux/redux-store";
+import {withSuspense} from "./hoc/withSuspense";
 
 const DialogsContainer = React.lazy(() => import('./components/Dialogs/DialogsContainer'))
 const UsersContainer = React.lazy(() => import('./components/Users/UsersContainer'))
 const ProfileContainer = React.lazy(() => import('./components/Profile/ProfileContainer'))
 
 class App extends Component {
+    catchUnhandledErrors(event) {
+        alert(`UNHANDLED PROMISE REJECTION: ${event.reason}`);
+    }
     componentDidMount() {
         this.props.initializeApp()
+        window.addEventListener("unhandledrejection", this.catchUnhandledErrors.bind(this));
+    }
+
+    componentWillUnmount() {
+        window.removeEventListener("unhandledrejection", this.catchUnhandledErrors.bind(this))
     }
 
     render() {
@@ -28,23 +37,15 @@ class App extends Component {
                 <Navbar/>
                 <div className="app-wrapper-content">
                     <Switch>
-                        <Route path="/profile/:userId?">
-                            <Suspense fallback={<Preloader/>}>
-                                <ProfileContainer/>
-                            </Suspense>
-                        </Route>
-                        <Route path="/dialogs">
-                            <Suspense fallback={<Preloader/>}>
-                                <DialogsContainer/>
-                            </Suspense>
-                        </Route>
-                        <Route path="/users">
-                            <Suspense fallback={<Preloader/>}>
-                                <UsersContainer/>
-                            </Suspense>
-                        </Route>
+                        <Route exact path="/" render={withSuspense(ProfileContainer)}/>
+                        <Route path="/profile/:userId?" render={withSuspense(ProfileContainer)}/>
+                        <Route path="/dialogs" render={withSuspense(DialogsContainer)}/>
+                        <Route path="/users" render={withSuspense(UsersContainer)}/>
                         <Route path="/login">
                             <Login/>
+                        </Route>
+                        <Route path="*">
+                            <div>404 NOT FOUND</div>
                         </Route>
                     </Switch>
                 </div>
