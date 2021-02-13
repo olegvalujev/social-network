@@ -40,7 +40,9 @@ class App extends Component {
                         <Route exact path="/" render={withSuspense(ProfileContainer)}/>
                         <Route path="/profile/:userId?" render={withSuspense(ProfileContainer)}/>
                         <Route path="/dialogs" render={withSuspense(DialogsContainer)}/>
-                        <Route path="/users" render={withSuspense(UsersContainer)}/>
+                        <Suspense fallback={<Preloader/>}>
+                            <Route path="/users" render={() => <UsersContainer pageTitle={'Samurai'}/>}/>
+                        </Suspense>
                         <Route path="/login">
                             <Login/>
                         </Route>
