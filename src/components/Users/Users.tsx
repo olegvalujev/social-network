@@ -11,8 +11,8 @@ type PropsType = {
     currentPage: number
     users: Array<UserType>
     followingInProgress: Array<number>
-    unFollow: (userId: number) => Promise<void>
-    follow: (userId: number) => Promise<void>
+    unFollow: (userId: number) => void
+    follow: (userId: number) => void
     isAuth: boolean
 }
 const Users: FC<PropsType> = ({totalUsersCount, pageSize, onPageChanged, currentPage, users, ...props}) => {
