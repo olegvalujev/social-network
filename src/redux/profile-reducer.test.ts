@@ -1,4 +1,4 @@
-import profileReducer, {addPostActionCreator, deletePost} from "./profile-reducer";
+import profileReducer, {actions} from "./profile-reducer";
 
 let initialState = {
     posts: [
@@ -10,7 +10,7 @@ let initialState = {
 }
 
 it('New post should be added', () => {
-    let action = addPostActionCreator('testing')
+    let action = actions.addPost('testing')
 
     let newState = profileReducer(initialState, action)
 
@@ -19,7 +19,7 @@ it('New post should be added', () => {
 });
 
 it('Message of new post should be "testing"', () => {
-    let action = addPostActionCreator('testing')
+    let action = actions.addPost('testing')
 
     let newState = profileReducer(initialState, action)
 
@@ -27,7 +27,7 @@ it('Message of new post should be "testing"', () => {
 });
 
 it('After deleting length of array should decrement', () => {
-    let action = deletePost(1)
+    let action = actions.deletePost(1)
 
     let newState = profileReducer(initialState, action)
 
@@ -35,7 +35,7 @@ it('After deleting length of array should decrement', () => {
 });
 
 it('After deleting length of array must not decrement if Post ID is incorrect', () => {
-    let action = deletePost(1000)
+    let action = actions.deletePost(1000)
 
     let newState = profileReducer(initialState, action)
 
