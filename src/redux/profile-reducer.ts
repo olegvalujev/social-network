@@ -1,6 +1,6 @@
-import {profileAPI} from "../api/api";
 import {stopSubmit} from "redux-form";
 import {PhotosType, PostType, ProfileType} from "../types/types";
+import {profileAPI} from "../api/proifle-api";
 
 export const ADD_POST = 'ADD-POST'
 export const DELETE_POST = 'DELETE_POST'
@@ -109,12 +109,12 @@ type SetStatusActionType = {
 export const setStatus = (status: string): SetStatusActionType => ({type: SET_STATUS, status})
 
 export const getUserProfile = (userId: number) => async (dispatch: any) => {
-    let response = await profileAPI.getProfile(userId)
-    dispatch(setUserProfile(response))
+    let data = await profileAPI.getProfile(userId)
+    dispatch(setUserProfile(data))
 }
 export const getStatus = (userId: number) => async (dispatch: any) => {
-    let response = await profileAPI.getStatus(userId)
-    dispatch(setStatus(response))
+    let data = await profileAPI.getStatus(userId)
+    dispatch(setStatus(data))
 }
 export const updateStatus = (status: string) => async (dispatch:any) => {
     let response = await profileAPI.updateStatus(status)
@@ -124,19 +124,19 @@ export const updateStatus = (status: string) => async (dispatch:any) => {
 }
 
 export const savePhoto = (file: string) => async (dispatch: any) => {
-    let response = await profileAPI.savePhoto(file)
-    if (!response.resultCode) {
-        dispatch(savePhotoSuccess(response.data.photos))
+    let data = await profileAPI.savePhoto(file)
+    if (!data.resultCode) {
+        dispatch(savePhotoSuccess(data.data.photos))
     }
 }
 
 export const saveProfile = (profile: ProfileType) => async (dispatch: any, getState: any) => {
     const userId = getState().auth.userId;
-    let response = await profileAPI.saveProfile(profile)
-    if (!response.resultCode) {
+    let data = await profileAPI.saveProfile(profile)
+    if (!data.resultCode) {
         dispatch(getUserProfile(userId))
     } else {
-        let message = response.messages.length > 0 ? response.messages[0] : 'Some error'
+        let message = data.messages.length > 0 ? data.messages[0] : 'Some error'
         dispatch(stopSubmit('profile-details-edit-form', {_error: message}))
         return Promise.reject(message)
     }
