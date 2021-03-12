@@ -4,12 +4,17 @@ import React, {useState} from "react";
 type PropsType = {
     totalUsersCount: number,
     pageSize: number,
-    currentPage: number,
-    onPageChanged: (page: number) => void,
+    currentPage?: number,
+    onPageChanged?: (page: number) => void,
     portionSize?: number
 }
 
-const Paginator: React.FC<PropsType> = ({totalUsersCount, pageSize, onPageChanged, currentPage, portionSize = 10}) => {
+const Paginator: React.FC<PropsType> = ({
+                                            totalUsersCount,
+                                            pageSize,
+                                            onPageChanged = (x) => x,
+                                            currentPage = 1,
+                                            portionSize = 10}) => {
     let [paginationPage, setPaginationPage] = useState(1)
 
     let pagesCount = Math.ceil(totalUsersCount / pageSize)

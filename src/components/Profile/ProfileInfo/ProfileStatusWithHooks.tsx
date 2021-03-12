@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import React, {ChangeEvent, useEffect, useState} from "react";
 import styled, {css} from 'styled-components'
 
 const Button = styled.button`
@@ -9,18 +9,25 @@ const Button = styled.button`
     margin: 0 1em;
     padding: 0.25em 1em;
     
-    ${props =>
+    ${(props: StyledButtonType) =>
         props.primary &&
         css`
           background: palevioletred;
           color: white;
         `};
 `
+type StyledButtonType = {
+    primary: boolean
+}
 
-const ProfileStatusWithHooks = ({status: initialStatus, updateStatus}) => {
+type PropsType = {
+    status: string
+    updateStatus: (status: string) => void
+}
+const ProfileStatusWithHooks: React.FC<PropsType> = (props) => {
 
     let [editMode, setEditMode] = useState(false)
-    let [status, setStatus] = useState(initialStatus)
+    let [status, setStatus] = useState(props.status)
 
     useEffect(() => {
         setStatus(status)
@@ -32,10 +39,10 @@ const ProfileStatusWithHooks = ({status: initialStatus, updateStatus}) => {
 
     const deactivateEditMode = () => {
         setEditMode(false)
-        updateStatus(status)
+        props.updateStatus(status)
     }
 
-    const onStatusChange = (event) => {
+    const onStatusChange = (event: ChangeEvent<HTMLInputElement>) => {
         setStatus(event.currentTarget.value)
     }
 

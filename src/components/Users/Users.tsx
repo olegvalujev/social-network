@@ -24,12 +24,14 @@ const Users: FC<PropsType> = ({totalUsersCount, pageSize, onPageChanged, current
                    currentPage={currentPage}
                    portionSize={10}/>
         <div className={styles.usersWrapper}>
-            {users.map(u => (<User key={u.id} user={u}
-                                         followingInProgress={props.followingInProgress}
-                                         unFollow={props.unFollow}
-                                         follow={props.follow}
-                                         isAuth={props.isAuth}
-            />))}
+            {users.map(u => (
+                <User key={u.id} user={u}
+                     followingInProgress={props.followingInProgress}
+                     unFollow={props.unFollow}
+                     follow={props.follow}
+                     isAuth={props.isAuth}
+                />
+                ))}
         </div>
     </div>
 }

@@ -2,8 +2,17 @@ import React from "react";
 import styles from "./Users.module.css"
 import defaultAvatar from './../../assets/rudolf_small.png'
 import {NavLink} from "react-router-dom";
+import {UserType} from "../../types/types";
 
-const User = ({user, followingInProgress, unFollow, follow, isAuth}) => {
+type OwnPropsType = {
+    user: UserType
+    followingInProgress: Array<number>
+    unFollow: (userId: number) => void
+    follow: (userId: number) => void
+    isAuth: boolean
+}
+
+const User: React.FC<OwnPropsType> = ({user, followingInProgress, unFollow, follow, isAuth}) => {
     return (
         <div className={styles.userBlock}>
             {user.status && <div>user.status</div>}

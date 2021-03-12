@@ -1,11 +1,12 @@
 import React from 'react';
-import renderer, {create} from 'react-test-renderer';
+import {create, ReactTestInstance} from 'react-test-renderer';
 import ProfileStatus from "./ProfileStatus";
 
 describe('ProfileStatus component', () => {
     test('Status from props should be in the state', () => {
         const component = create(<ProfileStatus status={'testing'}/>)
         const instance = component.getInstance()
+        // @ts-ignore
         expect(instance.state.status).toBe('testing')
     })
 
@@ -47,7 +48,8 @@ describe('ProfileStatus component', () => {
         let mockCallback = jest.fn()
 
         const component = create(<ProfileStatus status={'testing'} updateStatus={mockCallback}/>)
-        const instance = component.getInstance()
+        const instance= component.getInstance()
+        // @ts-ignore
         instance.deactivateEditMode()
         expect(mockCallback.mock.calls.length).toBe(1)
     })

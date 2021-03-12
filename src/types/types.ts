@@ -1,5 +1,3 @@
-import {INITIALIZATION_SUCCESS} from "../redux/app-reducer";
-
 export type PostType = {
     id: number,
     message: string,
@@ -29,6 +27,7 @@ export type ProfileType = {
     fullName: string
     contacts: ContactType
     photos: PhotosType
+    aboutMe: string
 }
 
 export type UserType = {
