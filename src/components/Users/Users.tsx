@@ -2,7 +2,9 @@ import React, {FC} from "react";
 import Paginator from "../common/Paginator/Paginator";
 import User from "./User";
 import styles from './Users.module.css'
-import {UserType} from "../../types/types";
+import {UserType} from "../../types/types"
+import {UsersSearchForm} from "./UsersSearchForm";
+import {FilterType} from "../../redux/users-reducer";
 
 type PropsType = {
     totalUsersCount: number
@@ -14,26 +16,28 @@ type PropsType = {
     unFollow: (userId: number) => void
     follow: (userId: number) => void
     isAuth: boolean
+    onFilterChanged: (filter: FilterType) => void
 }
-const Users: FC<PropsType> = ({totalUsersCount, pageSize, onPageChanged, currentPage, users, ...props}) => {
+const Users: FC<PropsType> = React.memo((props) => {
 
     return <div>
-        <Paginator totalUsersCount={totalUsersCount}
-                   pageSize={pageSize}
-                   onPageChanged={onPageChanged}
-                   currentPage={currentPage}
+        <UsersSearchForm onFilterChanged={props.onFilterChanged}/>
+        <Paginator totalUsersCount={props.totalUsersCount}
+                   pageSize={props.pageSize}
+                   onPageChanged={props.onPageChanged}
+                   currentPage={props.currentPage}
                    portionSize={10}/>
         <div className={styles.usersWrapper}>
-            {users.map(u => (
+            {props.users.map(u => (
                 <User key={u.id} user={u}
-                     followingInProgress={props.followingInProgress}
-                     unFollow={props.unFollow}
-                     follow={props.follow}
-                     isAuth={props.isAuth}
+                      followingInProgress={props.followingInProgress}
+                      unFollow={props.unFollow}
+                      follow={props.follow}
+                      isAuth={props.isAuth}
                 />
-                ))}
+            ))}
         </div>
     </div>
-}
+})
 
 export default Users
