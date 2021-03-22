@@ -1,26 +1,42 @@
 import React from 'react';
 import s from './Header.module.css';
-import {NavLink} from "react-router-dom";
+import {Link} from "react-router-dom";
+import {Avatar, Button, Col, Menu, Row} from "antd";
+import {UserOutlined} from "@ant-design/icons";
+import {Header} from "antd/es/layout/layout";
+import {useDispatch, useSelector} from "react-redux";
+import {logout} from "../../redux/auth-reducer";
+import {getIsAuth, getLogin} from "../../redux/auth-selectors";
 
-export type MapPropsType = {
-    isAuth: boolean
-    login: string | null
-}
+export const AppHeader: React.FC = () => {
+    const isAuth = useSelector(getIsAuth)
+    const login = useSelector(getLogin)
+    const dispatch = useDispatch()
 
-export type DispatchPropsType = {
-    logout: () => void
-}
-const Header: React.FC<MapPropsType & DispatchPropsType> = (props) => {
-    return (
-        <header className={ s.header }>
-            <h2 className={s.logoTitle}>Social Network</h2>
-            <div className={s.loginBlock}>
-                { props.isAuth
-                    ? <div> {props.login} - <button onClick={props.logout}>Logout</button> </div>
-                    : <NavLink to={'/login'} className={s.login}>Login</NavLink> }
-            </div>
-        </header>
-    )
-}
+    const onLogout = () => {
+        dispatch(logout())
+    }
+    return <Header className="header">
+        <Row>
+            <Col span={16}>
+                <Menu theme="dark" mode="horizontal" defaultSelectedKeys={['2']}>
+                    <Menu.Item key="1"><Link to='/developers'>Developers</Link></Menu.Item>
+                </Menu>
+            </Col>
 
-export default Header;
+            {isAuth ? <div>
+                    <Col span={2}>
+                        <Avatar alt={login || ''} style={{backgroundColor: '#87d068'}} icon={<UserOutlined/>}/>
+                    </Col>
+                    <Col span={4}>
+                        <Button onClick={onLogout}>Logout</Button>
+                    </Col>
+                </div>
+                : <Col span={6}>
+                    <Button>
+                        <Link to={'/login'} className={s.login}>Login</Link>
+                    </Button>
+                </Col>}
+        </Row>
+    </Header>
+}
